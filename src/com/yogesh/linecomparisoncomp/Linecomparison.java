@@ -1,33 +1,48 @@
 package com.yogesh.linecomparisoncomp;
 
-import java.util.Scanner;
-
 public class Linecomparison {
 
-	public static void main(String[] args) {
-		
-		System.out.println("Welcome to Line Comparison Computation ");
-		
 		int x1 ;
 		int y1 ;
 		int x2 ;
 		int y2 ;
-		double lengthOfLine ;
-		
-		System.out.println("Enter Two points , X1 & Y1 and X2 & Y2 :");
-		Scanner scanner = new Scanner(System.in);
-		
-		x1 = scanner.nextInt();
-		y1 = scanner.nextInt();
-		x2 = scanner.nextInt();
-		y2 = scanner.nextInt();
-		
-		lengthOfLine = Math.sqrt(Math.pow((x2-x1),2) + Math.pow((y2-y1),2));
-		
-		System.out.println("Length of Line Is :" + lengthOfLine);
-		
-		
-	 
+		String line ;
+
+		void setPoints(int x1 , int y1 , int x2 , int y2 )
+		{
+			this.x1 = x1 ;
+			this.y1 = y1 ;
+			this.x2 = x2 ;
+			this.y2 = y2 ;
+		}
+
+		double length()
+		{
+			return Math.sqrt(Math.pow((this.x2 - this.x1) , 2) + Math.pow((this.y2 - this.y1) , 2));
+		}
+
+	 	public void checkEquality(Linecomparison linecomparison2) {
+	 		if(this.length() == linecomparison2.length()) {
+	 			System.out.println("Both Lines Are Same");
+	 		}
+	 		else
+	 		{
+	 			System.out.println("Lines Are  not Same");
+	 		}
+	 	}
+	public static void main(String[] args)
+	{
+
+		 Linecomparison linecomparison1 = new  Linecomparison();
+		 linecomparison1.setPoints(90, 50, 10, 20);
+
+		 Linecomparison linecomparison2 = new  Linecomparison();
+		 linecomparison2.setPoints(40, 50, 10, 20);
+
+		 linecomparison1.checkEquality(linecomparison2);
+
+
 	}
+
 
 }
