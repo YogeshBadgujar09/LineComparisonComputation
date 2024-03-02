@@ -6,7 +6,6 @@ public class Linecomparison {
 		int y1 ;
 		int x2 ;
 		int y2 ;
-		String line ;
 
 		void setPoints(int x1 , int y1 , int x2 , int y2 )
 		{
@@ -25,10 +24,15 @@ public class Linecomparison {
 	 		if(this.length() == linecomparison2.length()) {
 	 			System.out.println("Both Lines Are Same");
 	 		}
+	 		else if(this.length() > linecomparison2.length()) 
+	 		{
+		 			System.out.println("Line 1 length is Greater then Line 2 Length");
+		 	}
 	 		else
 	 		{
-	 			System.out.println("Lines Are  not Same");
-	 		}
+		 			System.out.println("Line 2 Length is Greater then Line 1 Length");
+		 	}
+	 	 
 	 	}
 	public static void main(String[] args)
 	{
